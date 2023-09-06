@@ -1,10 +1,19 @@
+from typing import List
+
+from bson import ObjectId
 from pydantic import BaseModel, validator
 
 
 class Product(BaseModel):
-    name: str = ""
-    description: str = ""
-    price: int = 0
+    _id: ObjectId
+    name: str
+    price: int
+    description: str
+    image: str
+    categories: List[str]
+    quantity: int
+    createdAt: str
+    userTelegramId: str
 
     @classmethod
     def from_dict(cls, d):
