@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "easy-sell-bot"
+version = "0.1.0"
+description = "AI based E-Commerce telegram bot."
+authors = ["ffekirnew <ffekirnew0808@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytelegrambotapi = "^4.13.0"
+requests = "^2.31.0"
+pydantic = "^2.3.0"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
