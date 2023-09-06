@@ -12,6 +12,7 @@ pytelegrambotapi = "^4.13.0"
 requests = "^2.31.0"
 pydantic = "^2.3.0"
 python-dotenv = "^1.0.0"
+bson = "^0.5.10"
 
 
 [build-system]
