@@ -34,7 +34,9 @@ class BaseHandler(metaclass=ABCMeta):
         width: int,
     ) -> Message:
         markup = create_buttons(buttons, width)
-        sent_message = self.send_markdown_message(chat_id, text, markup)
+        sent_message = self.bot.send_message(
+            chat_id, text, reply_markup=markup, parse_mode="MarkDown"
+        )
         return sent_message
 
     def handle_error(

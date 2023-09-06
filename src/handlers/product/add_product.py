@@ -36,7 +36,7 @@ class AddProduct(BaseHandler):
 
             text = "Now send the price for your product."
             sent_message = self.send_markdown_message(message.chat.id, text)
-            self.pass_to_next_handler(sent_message, self.add_price)
+            self.pass_to_next_handler(sent_message, self.get_product_price)
         except ValueError:
             error_message = (
                 "Description cannot be empty. Send the description for your product."
