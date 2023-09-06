@@ -1,23 +1,14 @@
-import os
+from telebot import TeleBot
 
-import telebot
-from dotenv import load_dotenv
+from core import config
+from handlers.register_handlers import RegisterHandlers
 
-from application.product.add_product import AddProduct
+# Create bot instance
+bot = TeleBot(config.BOT_TOKEN, num_threads=5)
 
-load_dotenv()
+# Register Handlers
+RegisterHandlers(bot).register_handlers()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-bot = telebot.TeleBot(BOT_TOKEN)
-
-# Use Cases
-add_product = AddProduct(bot)
-
-
-@bot.message_handler(commands=["add_product"])
-def add_product_handler(message):
-    add_product.start_application(message)
-
-
-print("Bot running.")
-bot.infinity_polling()
+if __name__ == "__main__":
+    print("Bot running.")
+    bot.infinity_polling()
